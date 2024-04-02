@@ -1,0 +1,31 @@
+<!-- views/error.ejs -->
+<!DOCTYPE html>
+<html lang="ja" itemscope itemtype="http://schema.org/WebSite" prefix="og: http://ogp.me/ns#">
+<head>
+    <%- include('partials/head') %>
+    <style>
+
+    </style>
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <% if (currentPage !== 'home') { %>
+        <%- include('partials/breadcrumb') %>
+    <% } %>
+
+    <div class="content-container">
+        <section class="main-content">
+            <div class="error-container">
+                <h1>ページが見つかりません。</h1>
+                <p>
+                    お探しのページが見つかりませんでした。<br>
+                    上記カテゴリーから記事をお探しになるか、キーワードで検索してみてください。
+                </p>
+            </div>
+        </section>
+        <%- include('partials/sidebar') %>
+    </div>
+    <%- include('partials/footer') %>
+</body>
+</html>

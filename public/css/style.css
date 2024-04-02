@@ -1,0 +1,488 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #eff4f9;
+    color: #333;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+.site-header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.search-form {
+    display: flex;
+}
+
+.search-input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+.search-button {
+    padding: 0.5rem 1rem;
+    background-color: #47a0fa;
+    color: #fff;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.nav-list {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    padding: 0.2rem 1rem;
+    list-style: none;
+}
+
+.nav-link {
+    border-radius: 4px 4px 0 0;
+    padding: 0.4rem 1.2rem 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #626262;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: #eff4f9;
+    color: #0056b3;
+    font-weight: bold;
+}
+
+.content-container {
+    max-width: 1200px;
+    margin: 1rem auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1.3rem;
+    align-items: flex-start;
+}
+
+.post-card {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-bottom: 1rem;
+    display: flex;
+}
+
+.post-card__thumbnail {
+    width: 250px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px 4px 0 0;
+    padding: 1rem;
+}
+
+.post-card__content {
+    width: 100%;
+    padding: 1rem;
+    padding-left: 0;
+}
+
+.post-card__date {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.post-card__excerpt {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.post-card__tags {
+    padding: 0.5rem 0 1rem 0;
+}
+
+.tag {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-right: 5px;  
+    color: #626262;
+    font-weight: bold;
+}
+
+.tag:hover {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  
+  .pagination a,
+  .pagination .current-page,
+  .pagination .ellipsis {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .pagination a:hover {
+    background-color: #47a0fa;
+    color: #fff;
+  }
+  
+  .pagination .current-page {
+    background-color: #47a0fa;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .previous-page,
+  .next-page {
+    font-weight: bold;
+  }
+  
+  .previous-page::before {
+    content: "\f104";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 0.5rem;
+  }
+  
+  .next-page::after {
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-left: 0.5rem;
+  }
+  
+  .pagination .ellipsis {
+    pointer-events: none;
+    color: #999;
+  }
+  
+.section-title {
+    font-size: 1.25rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+.profile {
+    padding: 20px;
+    height: 350px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.profile-name {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.profile-description {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.profile-image {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    display: block;
+    object-fit: cover;
+    margin: 0.7rem auto;
+}
+
+.featured-posts .section-title {
+    background-color: #47a0fa;
+    border-radius: 4px;
+    color: #fff;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.featured-post-list {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.featured-post {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.featured-post a {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.featured-post-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 1rem;
+}
+
+.featured-post-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.featured-post-title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.site-footer {
+    margin-top: 2rem;
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    border-top: 1px solid #e0e0e0;
+}
+
+.post-details {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: 2rem;
+}
+
+.post-header {
+    min-width: 200px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 1rem 3rem;
+}
+
+.post-date {
+    color: #999;
+    font-size: 0.9rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.post-date::before {
+    content: "\f073"; /* FontAwesomeのカレンダーアイコン */
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    left: 0;
+    top: 0.1rem;
+    font-weight: 900;
+}
+
+.post-title {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.post-tags {
+    margin: 0;
+}
+
+.breadcrumb {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 2rem;
+    list-style: none;
+}
+
+.breadcrumb-item {
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    color: #626262;
+}
+
+/* Markdown→HTML
+/* コードブロック */
+.markdown-body {
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    padding-bottom: 3rem;
+}
+
+.markdown-body pre {
+    background-color: #272822;
+    position: relative;
+    padding-top: 2rem;
+    overflow-x: auto;
+}
+
+.markdown-body .hljs::before {
+    content: attr(data-lang);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.1rem 0.5rem;
+    background-color: #6f6f6f;
+    color: #f8f8f2;
+    font-size: 0.8rem;
+    border-radius: 4px 0 4px 0;
+}
+
+.hljs-copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 12px;
+    color: #fff;
+    background-color: #6c757d;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+@media (max-width: 767px) {
+    .post-header, .markdown-body {
+        padding: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .content-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .site-title {
+        margin-bottom: 1rem;
+    }
+
+    .header-inner {
+        display: block;
+        text-align: center;
+    }
+
+    .search-form {
+        width: 100%;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+ 
+    .profile-description {
+        text-align: center;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+    }
+    
+    .nav-item {
+        width: 50%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .nav-link {
+        padding: 0.4rem;
+        border-radius: 4px;
+    }
+
+    .post-card {
+        flex-direction: column;
+    }
+    
+    .post-card__thumbnail {
+        width: 100%;
+        height: auto;
+    }
+
+    .post-card__content {
+        padding: 1rem;
+        padding-top: 0;
+    }
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding-left: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb li:first-child:before {
+    content: "\f015";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    padding-right: 0.5rem;
+}
+
+.breadcrumb li + li:before {
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    padding: 0 0.5rem;
+}
+
+.error-container h1 {
+    padding: 1rem 2rem;
+}
+.error-container p {
+    line-height: 1.5;
+    padding-left: 3rem;
+    padding-bottom: 2rem;
+}

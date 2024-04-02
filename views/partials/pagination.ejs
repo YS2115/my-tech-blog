@@ -1,0 +1,37 @@
+<!-- views/partials/pagination.ejs -->
+<div class="pagination">
+  <!-- 現在のページが1より大きい場合、前のページへのリンクを表示 -->
+  <% if (page > 1) { %>
+    <a href="<%= buildPaginationUrl(currentPage, page - 1, query, category) %>" class="previous-page">前のページ</a>
+  <% } %>
+
+  <!-- 現在のページが3より大きい場合、最初のページへのリンクと省略記号を表示 -->
+  <% if (page > 3) { %>
+    <a href="<%= buildPaginationUrl(currentPage, 1, query, category) %>">1</a>
+    <% if (page > 4) { %>
+      <span class="ellipsis">...</span>
+    <% } %>
+  <% } %>
+
+  <!-- 現在のページの前後2ページを表示 -->
+  <% for (let i = Math.max(1, page - 2); i <= Math.min(totalPages, page + 2); i++) { %>
+    <% if (i === Number(page)) { %>
+      <span class="current-page"><%= i %></span>
+    <% } else { %>
+      <a href="<%= buildPaginationUrl(currentPage, i, query, category) %>"><%= i %></a>
+    <% } %>
+  <% } %>
+
+  <!-- 現在のページが最終ページから2ページ以内にない場合、最終ページへのリンクと省略記号を表示 -->
+  <% if (page < totalPages - 2) { %>
+    <% if (page < totalPages - 3) { %>
+      <span class="ellipsis">...</span>
+    <% } %>
+    <a href="<%= buildPaginationUrl(currentPage, totalPages, query, category) %>"><%= totalPages %></a>
+  <% } %>
+
+  <!-- 現在のページが最終ページより小さい場合、次のページへのリンクを表示 -->
+  <% if (page < totalPages) { %>
+    <a href="<%= buildPaginationUrl(currentPage, page + 1, query, category) %>" class="next-page">次のページ</a>
+  <% } %>
+</div>

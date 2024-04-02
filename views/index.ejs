@@ -1,0 +1,45 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="ja" itemscope itemtype="http://schema.org/WebSite" prefix="og: http://ogp.me/ns#">
+<head>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <% if (currentPage !== 'home') { %>
+        <%- include('partials/breadcrumb') %>
+    <% } %>
+
+    <div class="content-container">
+        <section class="main-content">
+            <div class="post-list">
+                <% posts.forEach(post => { %>
+                  <article class="post-card">
+                    <a href="/posts/<%= post.slug %>" class="post-card__link">
+                      <img src="<%= post.thumbnail %>" alt="<%= post.title %>のサムネイル" class="post-card__thumbnail">
+                    </a>
+                    <div class="post-card__content">
+                      <header class="post-card__header">
+                        <time class="post-card__date" datetime="<%= post.date %>"><%= post.formattedDate %></time>
+                        <a href="/posts/<%= post.slug %>" class="post-card__link">
+                            <h2 class="post-card__title"><%= post.title %></h2>
+                        </a>
+                        <p class="post-card__excerpt"><%= post.excerpt %></p>
+                      </header>
+                      <div class="post-card__tags">
+                        <% post.tags.forEach(tag => { %>
+                        <a href="/tag/<%= tag %>" class="tag"><%= tag %></a>
+                        <% }) %>
+                      </div>
+                    </div>
+                  </article>
+                <% }) %>
+              </div>
+            <%- include('partials/pagination') %>
+        </section>
+        <%- include('partials/sidebar') %>
+    </div>
+    <%- include('partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!-- views/partials/sidebar.ejs -->
+<aside class="sidebar">
+    <aside class="profile">
+        <h1 class="section-title">プロフィール</h1>
+        <img src="<%= profile.image %>" alt="プロフィール画像" class="profile-image">
+        <h2 class="profile-name"><%= profile.name %></h2>
+        <p class="profile-description"><%= profile.description %></p>
+    </aside>
+    <section class="featured-posts">
+        <h2 class="section-title">Featured Posts</h2>
+        <div class="featured-post-list">
+            <% featuredPosts.forEach(post => { %>
+                <article class="featured-post">
+                    <a href="/posts/<%= post.slug %>">
+                        <img src="<%= post.thumbnail %>" alt="<%= post.title %>" class="featured-post-image">
+                        <div class="featured-post-content">
+                            <h3 class="featured-post-title"><%= post.title %></h3>
+                        </div>
+                    </a>
+                </article>
+            <% }) %>
+        </div>
+    </section>
+</aside>
